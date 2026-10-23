@@ -1,0 +1,236 @@
+:root {
+	/* Colours by Catppuccin */
+	--bg-pane: hsl(220deg 23% 95%);
+	--secondary-pane: hsl(220deg 22% 92%);
+	--surface-light: hsl(223deg 16% 83%);
+	--surface-medium: hsl(225deg 14% 77%);
+	--surface-dark: hsl(227deg 12% 71%);
+	--overlay-light: hsl(228deg 11% 65%);
+	--overlay-medium: hsl(231deg 10% 59%);
+	--overlay-dark: hsl(232deg 10% 53%);
+	--text: hsl(234deg 16% 35%);
+	--subtext-light: hsl(233deg 10% 47%);
+	--subtext-dark: hsl(233deg 13% 41%);
+	--link: hsl(220deg 91% 54%);
+	--success: hsl(109deg 58% 40%);
+	--warning: hsl(35deg 77% 49%);
+	--error: hsl(347deg 87% 44%);
+	--selection: hsl(232deg 10% 53% / 25%);
+	--primary: hsl(231deg 97% 72%);
+}
+
+* {
+  margin: 0px;
+  padding: 0px; 
+  border: 0px;
+  font-size: 100%;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+  color: inherit;
+  background-color: inherit;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+	gap: 2em;
+  background-color: var(--bg-pane);
+  font-size: 18px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+  color: var(--text);
+}
+
+h1 {
+	font-size: 48px;
+	font-weight: 800;
+	color: var(--bg-pane);
+	background: transparent;
+	text-align: center;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	text-shadow: 2px 2px 4px var(--overlay-dark);
+}
+
+h2 {
+	font-size: 32px;
+	font-weight: 600;
+	text-align: center;
+}
+
+h3 {
+	font-size: 28px;
+	font-weight: 500;
+	margin-right: 12px;
+}
+
+header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	padding: 2em;
+	overflow: hidden;
+}
+
+header,
+main,
+footer {
+	background: transparent;
+}
+
+#header-content {
+	display: flex;
+	margin: 2em;
+	max-width: clamp(300px, 80vw, 1200px);
+}
+
+#header-background {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	transform: rotate(-20deg) translateY(-16px); /* translateY should be the same value as box shadow spread */
+	transform-origin: left bottom;
+	width: 200%;
+	height: 200%;
+	z-index: -1;
+	background-color: var(--primary);
+	box-shadow: 4px 4px 16px var(--overlay-dark);
+	border: 1px solid var(--overlay-dark);
+}
+
+#hero {
+	position: relative;
+	img {
+		transform: translateX(-4%) scale(1.2);
+		width: 100%;
+		height: auto;
+		box-shadow: 4px 4px 8px var(--overlay-dark);
+		border-radius: 2px;
+	}
+}
+
+#about {
+	display: flex;
+	flex-direction: column;
+	padding: 1em 1em 1em 2em;
+	align-items: center;
+	background-color: var(--secondary-pane);
+	border-radius: 3px;
+	box-shadow: 4px 4px 16px var(--overlay-dark);
+	border: 1px solid var(--overlay-dark);
+	.icon {
+		height: 28px;
+	}
+}
+
+.socials {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+	align-self: flex-end;
+}
+
+.icon {
+	aspect-ratio: 1 / 1;
+	margin: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	max-width: 1050px;
+	h2 {
+		align-self: flex-start;
+	}
+}
+
+#projects {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+	padding: 24px;
+	max-width: clamp(300px, 75vw, 1035px);
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 300px;
+	min-height: 500px;
+	padding: 1em;
+	box-shadow: 4px 4px 4px var(--overlay-dark);
+	border-radius: 4px;
+	border: 1px solid var(--overlay-dark);
+	background-color: var(--secondary-pane);
+	.icon {
+		height: 18px;
+		margin: 2px;
+	}
+}
+
+.screenshot {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	border-radius: 4px;
+	box-shadow: 0 0 8px var(--overlay-dark);
+	border: 1px solid var(--overlay-light);
+	margin: 8px;
+}
+
+.about-project {
+	display: flex;
+	flex-direction: column;
+	div {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.project-links {
+	display: flex;
+	gap: 8px;
+}
+
+footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+	padding: 24px;
+	background-color: var(--overlay-dark);
+	color: var(--bg-pane);
+	border-top: 2px solid var(--overlay-light);
+	.socials {
+		align-self: flex-start;
+	}
+}
+
+#contact {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	.icon {
+		height: 32px;
+	}
+}
+
+#footer-photo {
+	max-width: clamp(340px, 100%, 530px);
+	height: auto;
+}
