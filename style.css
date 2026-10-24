@@ -136,7 +136,7 @@ footer {
 
 .socials {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
 	gap: 1em;
 	align-self: flex-end;
@@ -245,23 +245,26 @@ footer {
 
 @media (max-width: 1000px) {
 	h1 {
-		top: 0;
-		left: 4em;
+		width: 400px;
+		top: -1em;
+		left: 15vw;
 		bottom: auto;
 	}
 	#header-content {
+		display: inline;
 	}
 	#hero {
-		position: static;
 		display: inline;
 		float: left;
+		margin: 0 2em 2em 0;
 	}
 	#about {
+		display: block;
 		width: 100%;
 	}
 }
 
-@media (max-width: 500px) {
+@media (max-width: 575px) {
 	h1 {
 		position: relative;
 		top: auto;
@@ -278,7 +281,8 @@ footer {
 	}
 
 	#hero {
-		justify-content: center;
+		margin: 0;
+		padding: 0;
 		max-width: 100%;
 		img {
 			transform: none;
@@ -287,5 +291,18 @@ footer {
 
 	#about {
 		max-width: 100%;
+		background-color: transparent;
+		box-shadow: none;
+		border: none;
 	}
+
+	#header-background {
+		transform: rotate(-20deg) translateY(-20%); /* translateY should be the same value as box shadow spread */
+		transform-origin: left bottom;
+	}
+
+	#projects {
+		max-width: 95vw;
+	}
+
 }
