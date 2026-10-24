@@ -108,7 +108,7 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 300px;
+	max-width: 250px;
 	img {
 		transform: translateX(-4%) scale(1.2);
 		width: 100%;
@@ -241,4 +241,51 @@ footer {
 #footer-photo {
 	max-width: clamp(340px, 100%, 530px);
 	height: auto;
+}
+
+@media (max-width: 1000px) {
+	h1 {
+		top: 0;
+		left: 4em;
+		bottom: auto;
+	}
+	#header-content {
+	}
+	#hero {
+		position: static;
+		display: inline;
+		float: left;
+	}
+	#about {
+		width: 100%;
+	}
+}
+
+@media (max-width: 500px) {
+	h1 {
+		position: relative;
+		top: auto;
+		left: auto;
+		bottom: 2em;
+	}
+	header {
+		padding: 0;
+	}
+
+	#header-content {
+		flex-direction: column;
+		max-width: 100%;
+	}
+
+	#hero {
+		justify-content: center;
+		max-width: 100%;
+		img {
+			transform: none;
+		}
+	}
+
+	#about {
+		max-width: 100%;
+	}
 }
